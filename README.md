@@ -212,9 +212,9 @@ ________________________
   "created": "2023-08-16T17:07:23.708406",
   "updated": "2023-08-16T17:07:23.708455",
   "mailType": "LETTER",
-  "indexRecipient": "150006",
-  "addressRecipient": "мОцДом2",
-  "nameRecipient": "вм4теч",
+  "indexRecipient": "150000",
+  "addressRecipient": "ПроектДом2",
+  "nameRecipient": "vm4tech",
   "stateType": "CREATED",
   "postOffice": {
     "id": 1,
