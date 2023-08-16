@@ -197,7 +197,7 @@ ________________________
     "indexRecipient": "150000",
     "addressRecipient": "ПроектДом2",
     "nameRecipient": "vm4tech",
-    "indexOffice": "150000"
+    "indexOffice": "150001"
 }
 ```
 
@@ -220,8 +220,8 @@ ________________________
     "id": 1,
     "created": "2023-08-16T18:23:18.457417",
     "updated": "2023-08-16T18:23:18.457538",
-    "index": "32228",
-    "postName": "Привет!"
+    "index": "150001",
+    "postName": "Офис продаж vm4tech"
   }
 }
 ```
