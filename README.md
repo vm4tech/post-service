@@ -247,19 +247,19 @@ ________________________
 Пример ответа (просто возвращается посылка + измененный статус и отделение у посылки)
 ```json
 {
-  "id": 52,
+  "id": 1,
   "created": "2023-08-16T17:07:23.708406",
   "updated": "2023-08-16T17:09:06.607409",
   "mailType": "LETTER",
-  "indexRecipient": "150006",
+  "indexRecipient": "150000",
   "addressRecipient": "мОцДом2",
   "nameRecipient": "вм4теч",
   "stateType": "AWAITNG_RECEIPT",
   "postOffice": {
-    "id": 1,
+    "id": 52,
     "created": "2023-08-16T16:05:32.252386",
     "updated": "2023-08-16T16:05:32.252386",
-    "index": "150006",
+    "index": "150001",
     "postName": "Почта Кукушка"
   }
 }
