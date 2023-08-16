@@ -251,7 +251,7 @@ ________________________
   "created": "2023-08-16T17:07:23.708406",
   "updated": "2023-08-16T17:09:06.607409",
   "mailType": "LETTER",
-  "indexRecipient": "150000",
+  "indexRecipient": "150322",
   "addressRecipient": "мОцДом2",
   "nameRecipient": "вм4теч",
   "stateType": "AWAITNG_RECEIPT",
