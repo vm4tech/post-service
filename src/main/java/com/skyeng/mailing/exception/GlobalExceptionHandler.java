@@ -21,16 +21,6 @@ public class GlobalExceptionHandler {
 
         return new ResponseEntity<ErrorDTO>(errorDTO, ex.getStatus());
     }
-    @ResponseStatus(code = HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(BadPathException.class)
-    public ResponseEntity<ErrorDTO> generateDuplicateException(BadPathException ex) {
-        ErrorDTO errorDTO = new ErrorDTO();
-        errorDTO.setMessage(ex.getMessage());
-        errorDTO.setStatus(String.valueOf(ex.getStatus().value()));
-        errorDTO.setTime(new Date().toString());
-
-        return new ResponseEntity<ErrorDTO>(errorDTO, ex.getStatus());
-    }
 
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
     @ExceptionHandler(BadRequestException.class)

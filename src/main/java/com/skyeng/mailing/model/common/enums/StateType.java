@@ -18,7 +18,9 @@ public enum StateType {
     @JsonProperty("SENT_TO")
     SENT_TO(30),
     @JsonProperty("AWAITNG_RECEIPT")
-    AWAITNG_RECEIPT(40);
+    AWAITNG_RECEIPT(40),
+    @JsonProperty("Received")
+    RECEIVED(45);
 
 //    @JsonProperty("50")
 //    RETURNED_BACK(50);

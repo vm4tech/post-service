@@ -24,4 +24,6 @@ public class MailHistoryService {
         history.setStateType(mail.getStateType());
         mailHistoryRepository.save(history);
     }
+
+
 }

@@ -2,7 +2,9 @@ package com.skyeng.mailing.service;
 
 import java.util.List;
 
+import com.skyeng.mailing.controller.dto.RecipientDTO;
 import com.skyeng.mailing.controller.dto.RegistrationDTO;
+import com.skyeng.mailing.controller.dto.SendMailDTO;
 import com.skyeng.mailing.exception.BadRequestException;
 import com.skyeng.mailing.exception.ValidationException;
 import com.skyeng.mailing.model.Mail;
@@ -38,12 +40,11 @@ public class PostOfficeService {
         this.postOfficeRepository = postOfficeRepository;
     }
 
-
-
     public List<PostOffice> getAllPostOffices(){
         return postOfficeRepository.findAll();
     }
 
+    @Transactional
     public PostOffice create(PostOffice postOffice){
         if (postOffice.getId() != null)
             throw new ValidationException("id", "object id should be null");
@@ -54,6 +55,7 @@ public class PostOfficeService {
         }
     }
 
+    @Transactional
     public PostOffice update(PostOffice postOffice){
         if (postOffice.getId() == null)
             throw new ValidationException("id", "object id cannot be null");
@@ -66,12 +68,33 @@ public class PostOfficeService {
 
     @Transactional
     public Mail registration(RegistrationDTO registrationDTO){
-        PostOffice postOffice = postOfficeRepository.findPostOfficeByIndex(registrationDTO.getIndexOffice());
-        if (postOffice == null)
-            throw new BadRequestException("Cannot find post office with index: " + registrationDTO.getIndexOffice());
-
+        PostOffice postOffice = findPostOfficeByIndex(registrationDTO.getIndexOffice());
         Mail mail = mailService.createMail(registrationDTO, postOffice);
         mailHistoryService.createHistoryPoint(mail, postOffice);
         return mail;
+    }
+
+    @Transactional
+    public Mail sendMailTo(SendMailDTO sendMailDTO){
+        PostOffice fromOffice = findPostOfficeByIndex(sendMailDTO.getFromIndex());
+        PostOffice toOffice = findPostOfficeByIndex(sendMailDTO.getToIndex());
+        Mail mail = mailService.moveMailToOffice(sendMailDTO.getMailId(), fromOffice, toOffice);
+        mailHistoryService.createHistoryPoint(mail, toOffice);
+        return mail;
+    }
+    public PostOffice findPostOfficeByIndex(String index){
+        PostOffice postOffice = postOfficeRepository.findPostOfficeByIndex(index);
+        if (postOffice == null)
+            throw new BadRequestException("Cannot find post office with index: " + index);
+        return postOffice;
+    }
+
+    public List<Mail> findAllMailByOfficeIndex(String index){
+        return mailService.getAllMailByOfficeIndex(index);
+    }
+
+    @Transactional
+    public List<Mail> getMailsByRecipient(RecipientDTO recipientDTO){
+        return mailService.getMailsByRecipient(recipientDTO);
     }
 }
