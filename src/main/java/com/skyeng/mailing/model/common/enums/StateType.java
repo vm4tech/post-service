@@ -11,13 +11,13 @@ import lombok.Getter;
  * @since 16.08.2023
  */
 public enum StateType {
-    @JsonProperty("10")
+    @JsonProperty("CREATED")
     CREATED(10),
-    @JsonProperty("20")
+    @JsonProperty("IN_PROCESSING")
     IN_PROCESSING(20),
-    @JsonProperty("30")
+    @JsonProperty("SENT_TO")
     SENT_TO(30),
-    @JsonProperty("40")
+    @JsonProperty("AWAITNG_RECEIPT")
     AWAITNG_RECEIPT(40);
 
 //    @JsonProperty("50")

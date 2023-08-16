@@ -19,7 +19,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @Setter
 public class CommonFields  {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     @Column
     Long id;
 

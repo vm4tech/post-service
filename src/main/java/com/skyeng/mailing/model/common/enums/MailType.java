@@ -12,13 +12,13 @@ import lombok.Getter;
  * @since 16.08.2023
  */
 public enum MailType {
-    @JsonProperty("10")
+    @JsonProperty("LETTER")
     LETTER(10),
-    @JsonProperty("20")
+    @JsonProperty("PACKAGE")
     PACKAGE(20),
-    @JsonProperty("30")
+    @JsonProperty("PARCEL")
     PARCEL(30),
-    @JsonProperty("40")
+    @JsonProperty("POSTCARD")
     POSTCARD(40);
 
     @Getter
