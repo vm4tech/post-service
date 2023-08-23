@@ -7,10 +7,10 @@
   - Data JPA
   - Lombok
 ### Пользователя доступа к БД:
-`CREATE USER skyeng WITH SUPERUSER PASSWORD 'skyengtest';`
+`CREATE USER db_user WITH SUPERUSER PASSWORD 'db_user_pass';`
 
 ### Создайте базу данных PSQL:
-`CREATE DATABASE skyeng_mailing;`
+`CREATE DATABASE db_mailing;`
 
 ### Если ставите на новую БД, то раскомментируйте данные строчки в ресурсах:
 ```yaml

@@ -9,10 +9,10 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/skyeng_mailing
+    url: jdbc:postgresql://localhost:5432/db_mailing
     driver-class-name: org.postgresql.Driver
-    username: skyeng
-    password: skyengtest
+    username: db_user
+    password: db_user_pass
   jpa:
     show-sql: true
     generate-ddl: true

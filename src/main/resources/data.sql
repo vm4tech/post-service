@@ -1,2 +1,2 @@
-INSERT INTO skyeng_postoffice (id, created, updated, index, post_name) VALUES (1, current_timestamp, current_timestamp, '150006', 'Почта Кукушка');
-INSERT INTO skyeng_postoffice (id, created, updated, index, post_name) VALUES (2, current_timestamp, current_timestamp, '150007', 'Почта Колотушка');
+INSERT INTO db_postoffice (id, created, updated, index, post_name) VALUES (1, current_timestamp, current_timestamp, '150006', 'Почта Кукушка');
+INSERT INTO db_postoffice (id, created, updated, index, post_name) VALUES (2, current_timestamp, current_timestamp, '150007', 'Почта Колотушка');
